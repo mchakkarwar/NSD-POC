@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.whitehedge.nsd_poc.MainActivity">
+
+    <Button
+        android:id="@+id/id_btn_start_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startService"
+        android:text="Register Service" />
+
+    <Button
+        android:id="@+id/id_btn_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/id_btn_start_service"
+        android:onClick="connectService"
+        android:text="Connect Service" />
+
+    <TextView
+        android:id="@+id/id_tv_msg_stack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/id_linear_layout"
+        android:layout_below="@+id/id_btn_connect" />
+
+    <LinearLayout
+        android:id="@+id/id_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="8">
+
+        <EditText
+            android:id="@+id/id_et_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="7" />
+
+        <Button
+            android:id="@+id/id_btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="send"
+            android:onClick="sendMessage"/>
+    </LinearLayout>
+</RelativeLayout>
